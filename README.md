@@ -1,75 +1,144 @@
-# Cloud Marketplace
+# Luttappi
 
-This is a admin portal to manage Cloud using [React](https://facebook.github.io/react/) and [Material-UI](http://www.material-ui.com/) components.
+Welcome to **Luttappi**! This project aims to provide a modern, maintainable, and scalable web application foundation. This readme will help developers quickly get started, understand the project's layout, and grasp the key design and architectural principles.
 
-using [create-react-app react-scripts](https://github.com/facebook/create-react-app) to start.
+---
 
-This is the very first version, feel free to use for any app. Contributions are always welcome!
+## Table of Contents
 
-## Installation / Running
+- [Project Overview](#project-overview)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Design and Architecture](#design-and-architecture)
+- [Configuration](#configuration)
+- [Development Workflow](#development-workflow)
+- [Linting & Code Quality](#linting--code-quality)
+- [Contributing](#contributing)
+- [License](#license)
 
-_for dev_
+---
 
-```sh
-git clone <repository-url>
+## Project Overview
 
-# change into the new directory
-npm install
+Luttappi is structured as a modern JavaScript/Node.js web application. It leverages popular tools and patterns for frontend and backend development, with a focus on developer experience, code consistency, and extensibility.
 
-npm start # will run the app
+---
 
-# Visit the app at http://localhost:3000
+## Getting Started
+
+### Prerequisites
+
+- **Node.js** (see `package.json` for compatible versions)
+- **npm** or **yarn**
+- (Optional) Environment variable configuration in `.env` file
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/RMRanjit/Luttappi.git
+   cd Luttappi
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Set up environment variables:**
+   - Copy `.env.example` to `.env` if present, or use the `.env` template provided.
+   - Edit the `.env` file with the required configuration.
+
+4. **Run the development server:**
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
+
+---
+
+## Project Structure
+
+```
+Luttappi/
+├── .env               # Environment variables
+├── .eslintrc.json     # ESLint configuration
+├── .gitignore
+├── README.md
+├── package.json
+├── public/            # Static assets (images, favicon, etc.)
+└── src/               # Application source code
 ```
 
-_for test_
+- **`public/`**: Static files served directly (e.g., HTML, images).
+- **`src/`**: Main application source code (components, logic, styles, etc.).
+- **`.env`**: Configuration for sensitive/environment-specific values.
+- **`.eslintrc.json`**: Linting rules for code style and best practices.
 
-```
-npm run test
-```
+---
 
-_for Production_
+## Design and Architecture
 
-```sh
-npm run build
+### 1. Modular Structure
 
-cd build
+- All functional code lives in `src/`, separated into logical modules (e.g., components, services, utils).
+- Encourages reusability and easier testing.
 
-# start a static server serving ./build dir, eg node serve/http-server or serve in express using express.static
-serve -s build
-```
+### 2. Configuration Driven
 
-## Docs
+- Uses environment variables from `.env` to manage sensitive or environment-specific settings.
+- Keeps configuration out of code for flexibility and security.
 
-- compile & build & test
+### 3. Tooling
 
-  check the [create-react-app react-scripts](https://github.com/facebook/create-react-app) doc for more information.
+- **ESLint** for code quality and style enforcement (see `.eslintrc.json`).
+- Scripts in `package.json` streamline common tasks (start, build, lint, test, etc.).
 
-- material-ui
+### 4. Extensibility
 
-  https://material-ui.com
+- The clean separation of static assets (`public/`) and application logic (`src/`) makes it straightforward to add functionality or swap technologies (e.g., switch frontend frameworks, add API endpoints).
 
-  update material-ui from v3 to v4
-  [migration to v4](https://material-ui.com/zh/guides/migration-v3/)
+---
 
-  if you are using some material-ui 0.x version, you could check this docs for migration [migration-from-v0-x](https://material-ui.com/guides/migration-v0x/#migration-from-v0-x)
+## Configuration
 
-- css
+- All runtime configuration should be specified in the `.env` file.
+- Ensure you do **not** commit sensitive data; `.gitignore` includes `.env` by default.
 
-  material-ui is using [jss](https://github.com/cssinjs/jss) css-in-js for styling solution.
+---
 
-- react-router
+## Development Workflow
 
-  now switch to version 4.x, it's a complete rewrite from the previous react-router version.
-  https://reacttraining.com/react-router/web/example/basic
+1. **Branching:** Use feature branches for new work.
+2. **Linting:** Run `npm run lint` before opening a PR.
+3. **Testing:** (If tests are present) Run `npm test`.
+4. **Pull Requests:** Ensure your code passes lint and tests before requesting review.
 
-- eslint
-  using [eslint](https://eslint.org/) for js/react code lint.
-  using [prettier](https://prettier.io/) for code styling
+---
 
-  `npm run lint` will show the lint result.
+## Linting & Code Quality
 
-## Others
+- The project uses ESLint with rules defined in `.eslintrc.json`.
+- Run the linter:
+  ```bash
+  npm run lint
+  # or
+  yarn lint
+  ```
+
+---
+
+## Contributing
+
+We welcome contributions! Please open issues or pull requests with clear descriptions. Follow the established code style and commit guidelines.
+
+---
 
 ## License
 
-MIT
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+---
